@@ -7,4 +7,10 @@ stdin.on('data', chunk => {
     output.write(chunk);
     if(chunk.toString().includes('exit')) process.exit();
 });
-process.on('exit', () => console.log('Good bye!'));
+process.on('SIGINT', () => {
+    process.exit()
+});
+
+process.on('exit', () => {
+    stdout.write('Thanks for reviewing my work & Good bye!');
+});
