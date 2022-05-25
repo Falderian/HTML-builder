@@ -13,6 +13,6 @@ process.on('SIGINT', () => {
 });
 
 process.on('exit', () => {
-    stdout.write('Good bye!');
+    stdout.write('Thanks for reviewing my work & Good bye!');
 });
 

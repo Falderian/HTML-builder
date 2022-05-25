@@ -14,7 +14,7 @@ fs.readdir(pathToStylesFolder, (err, files) => {
     files.forEach(item => {
         fs.stat(path.join(pathToStylesFolder, item), (err, stat) => {
             if(err) console.log(error);
-            if(path.parse(item).ext.slice(1,4) !== 'txt') {
+            if(path.parse(item).ext.slice(1) === 'css') {
                 const readableStream = fs.createReadStream(path.join(pathToStylesFolder, item), 'utf-8');
                 readableStream.on('data', chunk => {
                     fs.appendFile(pathToBundleCss, chunk, (err) => {
